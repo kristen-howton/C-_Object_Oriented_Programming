@@ -9,10 +9,11 @@ namespace ACM.BL
         public string FirstName { get; set; }
         public string EmailAddress { get; set; }
         public int CustomerId { get; private set; }
+        //read only property FullName
         public string FullName
         {
             get
-            {
+            { 
                 string fullName = LastName;
                 if (!string.IsNullOrWhiteSpace(FirstName))
                 {
@@ -25,5 +26,7 @@ namespace ACM.BL
                 return fullName;
             }
         }
+
+        public static int InstanceCount { get; set; }
     }
 }
