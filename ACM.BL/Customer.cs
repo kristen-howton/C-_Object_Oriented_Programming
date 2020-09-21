@@ -5,7 +5,14 @@ namespace ACM.BL
 {
     public class Customer
     {
+        public Customer()
+        {
 
+        }
+        public Customer(int customerId)
+        {
+            CustomerId = customerId;
+        }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string EmailAddress { get; set; }
@@ -29,7 +36,7 @@ namespace ACM.BL
 
 
         }
-
+        //overloading, same name but different parameters
         public Customer Retrieve(int customerId)
         {
             return new Customer();
