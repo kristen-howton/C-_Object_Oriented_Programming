@@ -6,8 +6,37 @@ namespace ACM.BL
 {
     class OrderItem
     {
+        public OrderItem()
+        {
+
+        }
+        public OrderItem(int orderItemId)
+        {
+            OrderItemId = orderItemId;
+        }
+
+        public int OrderItemId { get; set; }
         public string Product { get; set; }
         public int Quantity { get; }
         public double PurchasePrice { get; set; }
+        //great for different time zones
+        public DateTimeOffset? OrderDate { get; set; }
+
+        public Order Retrieve (int OrderId)
+        {
+            return new Order();
+        }
+
+        public bool Save()
+        {
+            return true;
+        }
+        public bool Validate()
+        {
+            var isValid = true;
+            if (OrderDate == null) isValid = false;
+            return isValid;
+        }
+        
     }
 }
