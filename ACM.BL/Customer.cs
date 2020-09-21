@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ACM.BL
 {
@@ -25,8 +26,37 @@ namespace ACM.BL
                 }
                 return fullName;
             }
+
+
         }
 
+        public Customer Retrieve(int customerId)
+        {
+            return new Customer();
+        }
+
+        public List<Customer>Retrieve()
+        {
+            return new List<Customer>();
+        }
+
+        public bool Save()
+        {
+            return true;
+        }
+
+        public bool Validate()
+        {
+            var isValid = true;
+            if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
+            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
+
+            return isValid;
+        }
+
+        //static belongs to class itself, must use class name
         public static int InstanceCount { get; set; }
     }
+
+
 }

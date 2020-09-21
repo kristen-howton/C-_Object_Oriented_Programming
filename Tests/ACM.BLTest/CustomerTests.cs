@@ -83,6 +83,62 @@ namespace ACM.BLTest
 
 
         }
+        [TestMethod]
+
+        public void ValidateValid()
+        {
+            //arrange
+            var customer = new Customer
+            {
+                LastName = "Perkins",
+                EmailAddress = "aperkins@gmail.com"
+            };
+            var expected = true;
+
+            //act
+            var actual = customer.Validate();
+
+            //assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        public void ValidateInvalidEmail()
+        {
+            //arrange
+            var customer = new Customer
+            {
+                LastName = "Perkins"
+            };
+            var expected = false;
+
+            //act
+            var actual = customer.Validate();
+
+            //assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        public void ValdateInvalidLastName()
+        {
+            //arrange
+            var customer = new Customer
+            {
+                EmailAddress = "aperkins@gmail.com"
+            };
+            var expected = false;
+
+            //act
+            var actual = customer.Validate();
+
+            //assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
 
 
     }
