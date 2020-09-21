@@ -15,14 +15,26 @@ namespace ACM.BL
             OrderId = orderId;
         }
 
-        public DateTime OrderDate { get; set; }
         public int OrderId { get; set; }
+        public string Product { get; set; }
+        public int Quantity { get; }
+        public double PurchasePrice { get; set; }
+        //great for different time zones
+        public DateTimeOffset? OrderDate { get; set; }
 
+        public Order Retrieve(int OrderId)
+        {
+            return new Order();
+        }
+
+        public bool Save()
+        {
+            return true;
+        }
         public bool Validate()
         {
             var isValid = true;
-            if (DateTime(OrderDate == null)) isValid = false;
-
+            if (OrderDate == null) isValid = false;
             return isValid;
         }
     }

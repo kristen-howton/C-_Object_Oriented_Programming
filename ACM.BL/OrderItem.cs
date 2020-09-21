@@ -16,12 +16,10 @@ namespace ACM.BL
         }
 
         public int OrderItemId { get; set; }
-        public string Product { get; set; }
-        public int Quantity { get; }
-        public double PurchasePrice { get; set; }
-        //great for different time zones
-        public DateTimeOffset? OrderDate { get; set; }
-
+        public int ProductId { get; set; }
+        public decimal? PurchasePrice { get; set; }
+        public int Quantity { get; set; }
+        
         public Order Retrieve (int OrderId)
         {
             return new Order();
@@ -34,7 +32,9 @@ namespace ACM.BL
         public bool Validate()
         {
             var isValid = true;
-            if (OrderDate == null) isValid = false;
+            if (PurchasePrice == null) isValid = false;
+            if (Quantity <= 0) isValid = false;
+            if (ProductId <= 0) isValid = false;
             return isValid;
         }
         
