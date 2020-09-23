@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL.Repositories
 {
-    class CustomerRepository
+    public class CustomerRepository
     {
         public Customer Retrieve(int customerId)
 
