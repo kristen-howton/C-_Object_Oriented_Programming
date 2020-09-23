@@ -34,13 +34,8 @@ namespace ACM.BL
                 return fullName;
             }
 
-
         }
-        //overloading, same name but different parameters
-        public Customer Retrieve(int customerId)
-        {
-            return new Customer();
-        }
+        
         public bool Validate()
         {
             var isValid = true;
