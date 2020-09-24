@@ -5,13 +5,15 @@ namespace ACM.BL
 {
     public class Customer
     {
-        public Customer()
+        //constructor chaining, 0 because had id parameter
+        public Customer(): this(0)
         {
 
         }
         public Customer(int customerId)
         {
             CustomerId = customerId;
+            AddressList = new List<Address>();
         }
         public string LastName { get; set; }
         public string FirstName { get; set; }
@@ -35,6 +37,8 @@ namespace ACM.BL
             }
 
         }
+
+        public List<Address> AddressList { get; set; }
         
         public bool Validate()
         {
