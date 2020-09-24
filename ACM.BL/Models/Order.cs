@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL
 {
-    class Order
+    public class Order
     {
         public Order()
         {
@@ -22,15 +22,6 @@ namespace ACM.BL
         //great for different time zones
         public DateTimeOffset? OrderDate { get; set; }
 
-        public Order Retrieve(int OrderId)
-        {
-            return new Order();
-        }
-
-        public bool Save()
-        {
-            return true;
-        }
         public bool Validate()
         {
             var isValid = true;

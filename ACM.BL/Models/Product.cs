@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ACM.BL
 {
-    class Product
+    public class Product
     {
         public Product()
         {
@@ -20,16 +20,6 @@ namespace ACM.BL
         public string Description { get; set; }
         public decimal? CurrentPrice { get; set; }
 
-        public Product Retrieve(int productId)
-        {
-            return new Product();
-        }
-
-        public bool Save()
-        {
-            return true;
-        }
-
         public bool Validate()
         {
             var isValid = true;
@@ -39,6 +29,4 @@ namespace ACM.BL
             return isValid;
         }
     }
-
-    
 }
