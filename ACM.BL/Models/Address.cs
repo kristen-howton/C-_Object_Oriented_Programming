@@ -22,7 +22,7 @@ namespace ACM.BL
         public string State { get; set; }
         public string PostalCode { get; set; }
         public string Country { get; set; }
-        public string AddressType { get; set; }
+        public int AddressType { get; set; }
         public bool Validate()
         {
             var isValid = true;
