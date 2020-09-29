@@ -6,6 +6,8 @@ namespace ACM.BL
     public class Customer
     {
         //constructor chaining, 0 because had id parameter
+        //gets this constructor to call the other constructor
+        //default constructor calls the parameterized constructor
         public Customer(): this(0)
         {
 
@@ -13,6 +15,7 @@ namespace ACM.BL
         public Customer(int customerId)
         {
             CustomerId = customerId;
+            //for list default value is null
             AddressList = new List<Address>();
         }
         public string LastName { get; set; }
