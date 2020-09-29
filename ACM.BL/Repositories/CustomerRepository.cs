@@ -23,7 +23,7 @@ namespace ACM.BL.Repositories
                 customer.EmailAddress = "aperkins@gmail.com";
                 customer.FirstName = "Ann";
                 customer.LastName = "Perkins";
-                customer.AddressList = addressRepository.RetriveByCustomerId(customerId).ToList();
+                customer.AddressList = addressRepository.RetriveByCustomerId(customerId).ToString();
             }
             return customer;
         }
