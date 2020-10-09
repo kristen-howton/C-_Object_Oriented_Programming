@@ -20,6 +20,10 @@ namespace ACM.BL
         public string Description { get; set; }
         public decimal? CurrentPrice { get; set; }
 
+        public override string ToString()
+        {
+            return ProductName;
+        }
         public bool Validate()
         {
             var isValid = true;

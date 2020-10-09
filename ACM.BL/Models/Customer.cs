@@ -22,6 +22,11 @@ namespace ACM.BL
         public string FirstName { get; set; }
         public string EmailAddress { get; set; }
         public int CustomerId { get; private set; }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
         //read only property FullName
         public string FullName
         {
