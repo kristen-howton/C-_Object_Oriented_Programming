@@ -27,6 +27,10 @@ namespace ACM.BL
         //great for different time zones
         public DateTimeOffset? OrderDate { get; set; }
 
+        public override string ToString()
+        {
+            return $"{OrderDate.Value.Date} ({OrderId})";
+        }
         public bool Validate()
         {
             var isValid = true;
